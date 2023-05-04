@@ -5,3 +5,5 @@ add 100k resistor for input_detect pin to prevent chance of sinking too much cur
 add qr code - ensure it is via a trackable/redirectable link
 
 renumber components to maintain consistency with rp2040 hardware design guide
+
+add led on gpio 25
