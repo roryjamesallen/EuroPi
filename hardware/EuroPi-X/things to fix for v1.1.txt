@@ -1,9 +1,3 @@
-make all headers breadboard compatible
-
 add 100k resistor for input_detect pin to prevent chance of sinking too much current while within the 0-3.3v range in edge cases (e.g. input is connected directly to ground, during plugging in process the switched pin and thus the input detect gpio will be connected directly to ground, potentially sinking more current than the rp2040's limit if the input_detect pin is currently transmitting
 
-add qr code - ensure it is via a trackable/redirectable link
-
 renumber components to maintain consistency with rp2040 hardware design guide
-
-add led on gpio 25
