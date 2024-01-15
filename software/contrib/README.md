@@ -1,6 +1,6 @@
 # Contributions
 
-Please see the [contributing guide](/contributing.md) for details on how to contribute a script to this 
+Please see the [contributing guide](/contributing.md) for details on how to contribute a script to this
 directory, specifically [the section on contrib scripts](/contributing.md#contrib-scripts).
 
 # List of packaged scripts
@@ -30,6 +30,19 @@ Recording of CV can be primed so that you can record a movement without missing 
 <i>Author: [anselln](https://github.com/anselln)</i>
 <br><i>Labels: sequencer, CV, performance</i>
 
+### Envelope Generator \[ [documentation](/software/contrib/envelope_generator.md) | [script](/software/contrib/envelope_generator.py) \]
+An attack release envelope with optional sustain and looping functionality.
+Envelopes are triggered or gated by the digital input, and the envelope is output, along with a copy of the digital input and an inverted copy of the envelope.
+
+<i>Author: [roryjamesallen](https://github.com/roryjamesallen)</i>
+<br><i>Labels: Envelope Generator</i>
+
+### Euclid \[ [documentation](/software/contrib/euclid.md) | [script](/software/contrib/euclid.py) \]
+Euclidean rhythm generator. Each channel can generate an independent euclidean rhythm.
+
+<i>Author: [chrisib](https://github.com/chrisib)</i>
+<br><i>Labels: sequencer, gates, triggers, euclidean</i>
+
 ### Hamlet \[ [documentation](/software/contrib/hamlet.md) | [script](/software/contrib/hamlet.py) \]
 A variation of the Consequencer script specifically geared towards driving voices
 
@@ -48,6 +61,14 @@ The division of the master clock that each LFO runs at, as well as each of their
 <i>Author: [roryjamesallen](https://github.com/roryjamesallen)</i>
 <br><i>Labels: LFO</i>
 
+### Kompari \[ [documentation](/software/contrib/kompari.md) | [script](/software/contrib/kompari.py) \]
+
+Compares `AIN` to `K1` and `K2`, outputting 5V digital signals on `CV1`-`CV5`, and an analogue output signal based on
+comparing all 3 sources.
+
+<i>Author: [chrisib](https://github.com/chrisib)</i>
+<br><i>Labels: logic, gates, binary operators</i>
+
 ### Logic \[ [documentation](/software/contrib/logic.md) | [script](/software/contrib/logic.py) \]
 
 Treats both inputs as digital on/off signals and outputs the results of binary AND, OR, XOR, NAND, NOR, and XNOR operations on outputs 1-6.
@@ -62,6 +83,23 @@ Users have a copy of the original trigger signal, a sample and hold and a track 
 
 <i>Author: [seanbechhofer](https://github.com/seanbechhofer)</i>
 <br><i>Labels: gates, sample&hold, track&hold</i>
+
+### Pam's "EuroPi" Workout \[ [documentation](/software/contrib/pams.md) | [script](/software/contrib/pams.py) \]
+A re-imaging of [ALM/Busy Circuit's Pamela's "NEW" Workout](https://busycircuits.com/alm017/). Turns the EuroPi into a clocked modulation
+source with multiple wave shapes, optional quantization, euclidean rhythm outputs and external start/stop trigger input.
+
+<i>Author: [chrisib](https://github.com/chrisib)</i>
+<br><i>Labels: clock, euclidean, gate, lfo, quantizer, random, trigger</i>
+
+### Particle Physics \[ [documentation](/software/contrib/particle_physics.md) | [script](/software/contrib/particle_physics.py) \]
+An irregular LFO based on a basic 1-dimensional physics simulation. Outputs triggers when a particle bounces under the effects of gravity. Outputs control signals
+based on the particle's position and velocity.
+
+While not technically random, the effects of changing the particle's initial conditions, gravity, and elasticity coefficient can create unpreditable rhythms.
+
+<i>Author: [chrisib](https://github.com/chrisib)</i>
+<br><i>Labels: gate, lfo, sequencer, random, trigger</i>
+
 
 ### Poly Square \[ [documentation](/software/contrib/poly_square.md) | [script](/software/contrib/poly_square.py) \]
 Six independent oscillators which output on CVs 1-6.
