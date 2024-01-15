@@ -638,6 +638,7 @@
     (descr "https://cdn-shop.adafruit.com/product-files/3484/3484_Datasheet.pdf")
     (tags "LED RGB NeoPixel Nano PLCC-4")
     (property "JLC" "C2890036")
+    (property "JLCPCB Rotation Offset" "90")
     (property "Sheetfile" "neopixels.kicad_sch")
     (property "Sheetname" "")
     (property "ki_description" "RGB LED with integrated controller")
