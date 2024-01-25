@@ -16,23 +16,25 @@ Suggested features:
 - More inputs
   - 4 inputs can fit in 8HP
 - Higher performance CV inputs
-  - External ADC, maybe with higher resolution
+  - External ADC, maybe with higher resolution [MCP3428](https://www.microchip.com/en-us/product/mcp3428)
   - Separate analogue and digital power supplies using RP2040 AGND
 - Ability to use +5V rail instead of internally generated
   - 16 pin header
   - Automatically use +5V rail if present, default to internally generated if not
 - Make unused GPIO and USB signals accessible from the back
   - Keep one I2C/SPI bus unused so users don't have to worry about address clashes
+  - Use Monome I2C standard with two headers to allow daisy chaining
+  - Third header for MIDI?
   - Make sure USB signals are length matched
 - Larger display (128x64 or larger)
-  - [SSD1306](https://www.buydisplay.com/serial-spi-1-3-inch-128x64-oled-display-module-ssd1306-white-on-black) without breakout board (use Izaak's in progress board?) 
+  - [SSD1306](https://www.buydisplay.com/serial-spi-1-3-inch-128x64-oled-display-module-ssd1306-white-on-black) without breakout board (Enoki?) 
 - Bipolar inputs
 - Bipolar outputs
 - Programmable I/O to allow unipolar or bipolar usage
   - Analogue switch IC? [DG4051 octa analog switch](https://www.mouser.co.uk/ProductDetail/Vishay-Siliconix/DG4051EEQ-T1-GE3?qs=367PjNmvCmmPtnHZ5hoXyA%3D%3D)
-- Front access USB
-- Front access reset and bootsel
-- MicroSD slot for increased storage
+- Front access USB - USB-C GT-USB-7038E is the right height
+- Front access reset and bootsel? Maybe not necessary if bootloader and reset can be accessed in software
+- MicroSD slot for increased storage? Probably not worth it if flash is already larger
 - Increased flash by default
 - Automatic detection of variant i.e. X or normal hardware
   - One GPIO tied to 3.3V, module detects it's an X if GPIO is high
