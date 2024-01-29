@@ -1,4 +1,4 @@
-21790687463905883
+21792393556991645
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -90707,6 +90707,13 @@ power-header-16-pin-unlabelled
 16
 allen-synthesis
 switch-momentary-c&k
+
+
+0
+4
+4
+allen-synthesis
+switch-momentary-c&k-illuminated
 
 
 0

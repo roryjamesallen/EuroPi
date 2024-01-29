@@ -1412,11 +1412,5 @@
     (stroke (width 0.05) (type default)) (fill none) (layer "Edge.Cuts") (tstamp 5b61e090-a45f-41e5-9e1c-ee8d44f1898b))
   (gr_circle (center 20.32 50.8) (end 21.92 50.8)
     (stroke (width 0.05) (type default)) (fill none) (layer "Edge.Cuts") (tstamp 8638cc72-bf22-49a4-9e5c-566634c05460))
-  (gr_text "49 pins" (at 50.8 17.78) (layer "User.1") (tstamp 2c5d9455-0115-43f2-9ac0-23e2894389b4)
-    (effects (font (size 1.5 1.5) (thickness 0.3) bold) (justify left bottom))
-  )
-  (gr_text "25 + 24 leds" (at 50.8 13.97) (layer "User.1") (tstamp 44b8502f-dc05-417c-b480-b8c06c970f68)
-    (effects (font (size 1.5 1.5) (thickness 0.3) bold) (justify left bottom))
-  )
 
 )
