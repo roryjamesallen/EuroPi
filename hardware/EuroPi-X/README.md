@@ -50,3 +50,9 @@ A panelised PCB with the input stage, output stage, and Enoki was ordered from J
 Successful testing and software development of the analogue input building block PCB. Input detection works consistently, and analogue voltage is detected, however a mistake in resistor values means the range is set at 0-3V into the ADC despite the ADC range being 0-2.048V, so negative voltages lower than ~2V cannot be read
 
 ![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/fcf70bad-958e-4776-b045-4cc93729183d)
+
+Input detection works for all 4 channels, but a yet undetermined issue is causing the ADC to not read channel 4. All other 3 channels work perfectly
+
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/1063a4a7-e716-4d2a-b3b2-b2bd6dc89bfd)
+
+The software wrappers for using the new outputs is beginning to take shape
