@@ -48,6 +48,7 @@ Basic testing of the Enoki boards proved the design to work. The only alteration
 - Add an RC circuit to the reset pin so that it is held low during startup
 - Make the I2C jumpers closed by default rather than open (or pull them to the other rail and use open jumpers again)
 - Move the FPC connector so that there isn't slack in the ribbon cable at the bottom
+
 ![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/65c8164e-f000-4cd5-a37c-f7de7897abff)
 
 PR submitted and merged to allow the menu to display on the taller display and lay groundwork for rewriting scripts in a way that fully respects the ability for the display to be differerent dimensions as defined in config settings
