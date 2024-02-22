@@ -44,7 +44,13 @@ A panelised PCB with the input stage, output stage, and Enoki was ordered from J
 ![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/9011a8ff-97ef-4ec7-beaa-0a3b44cd65ce)
 
 #### 13/02/2024 - Enoki lives!
+Basic testing of the Enoki boards proved the design to work. The only alterations needed before a final version are:
+- Add an RC circuit to the reset pin so that it is held low during startup
+- Make the I2C jumpers closed by default rather than open (or pull them to the other rail and use open jumpers again)
+- Move the FPC connector so that there isn't slack in the ribbon cable at the bottom
 ![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/65c8164e-f000-4cd5-a37c-f7de7897abff)
+
+PR submitted and merged to allow the menu to display on the taller display and lay groundwork for rewriting scripts in a way that fully respects the ability for the display to be differerent dimensions as defined in config settings
 
 #### 21/02/2024 - Analogue input testing
 Successful testing and software development of the analogue input building block PCB. Input detection works consistently, and analogue voltage is detected, however a mistake in resistor values means the range is set at 0-3V into the ADC despite the ADC range being 0-2.048V, so negative voltages lower than ~2V cannot be read
