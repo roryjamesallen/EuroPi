@@ -1,41 +1,47 @@
 # EuroPi X
 
-The EuroPi X is an improved hardware version of the EuroPi. Its exact feature set is yet to be decided, but likely additions are more inputs, more outputs, better noise performance for inputs, better accuracy for outputs, a larger display, and larger flash storage.
+#### 13/03/2023 - EuroPi-X Discord channel is created
+The EuroPi-X Discord channel is created and feature discussions began
 
-Suggested features:
-- RGB LEDs for outputs
-  - [Neopixels](https://www.adafruit.com/product/4492?gclid=Cj0KCQjw2cWgBhDYARIsALggUhp21QpzSRPmMwkA5GLrfMsx_jSPfgyTrgrEi0MlV2bsC2WGbknoDSoaAqggEALw_wcB)?
-  - Colour matches output type e.g. red for gate, blue for CV, green for 1v/oct
-  - Colour determined automatically in code when a method is used, e.g. cv1.on() would automatically set it to red as a gate type
-- DAC outputs (>=12 bit)
-  - [MCP4728](https://shop.pimoroni.com/products/adafruit-mcp4728-quad-dac-with-eeprom-stemma-qt-qwiic?variant=31458498412627&currency=GBP&utm_source=google&utm_medium=cpc&utm_campaign=google+shopping?utm_source=google&utm_medium=surfaces&utm_campaign=shopping&gclid=Cj0KCQjwtsCgBhDEARIsAE7RYh3qANxNiQCtKDUFhGal1OTP4WOT_NSxUyUTKL1Pj_3x2VDyPnRayScaAk5DEALw_wcB)? 12 bit, 4 channel
-  - Bipolar https://tinyurl.com/2abku7y3, jumper on the back of the module to set the mode, GPIO detects mode to allow code adjustments:
+#### 13/03/2023 - Enoki
+Toadstool Tech Enoki becomes a front runner for the OLED display (128x64 SSD1306, I2C)
 
-    ![image](https://user-images.githubusercontent.com/79809962/232499051-03726a7a-2504-42e1-a2b6-9dd00e95a89b.png)
+#### 19/04/2023 - Routing begins for prototype 1
+KiCad development of prototype 1 begins, and PCB development follows
 
-- More inputs
-  - 4 inputs can fit in 8HP
-- Higher performance CV inputs
-  - External ADC, maybe with higher resolution [MCP3428](https://www.microchip.com/en-us/product/mcp3428)
-  - Separate analogue and digital power supplies using RP2040 AGND
-- Ability to use +5V rail instead of internally generated
-  - 16 pin header
-  - Automatically use +5V rail if present, default to internally generated if not
-- Make unused GPIO and USB signals accessible from the back
-  - Keep one I2C/SPI bus unused so users don't have to worry about address clashes
-  - Use Monome I2C standard with two headers to allow daisy chaining
-  - Third header for MIDI?
-  - Make sure USB signals are length matched
-- Larger display (128x64 or larger)
-  - [SSD1306](https://www.buydisplay.com/serial-spi-1-3-inch-128x64-oled-display-module-ssd1306-white-on-black) without breakout board (Enoki?) 
-- Bipolar inputs
-- Bipolar outputs
-- Programmable I/O to allow unipolar or bipolar usage
-  - Analogue switch IC? [DG4051 octa analog switch](https://www.mouser.co.uk/ProductDetail/Vishay-Siliconix/DG4051EEQ-T1-GE3?qs=367PjNmvCmmPtnHZ5hoXyA%3D%3D)
-- Front access USB - USB-C GT-USB-7038E is the right height
-- Front access reset and bootsel? Maybe not necessary if bootloader and reset can be accessed in software
-- MicroSD slot for increased storage? Probably not worth it if flash is already larger
-- Increased flash by default
-- Automatic detection of variant i.e. X or normal hardware
-  - One GPIO tied to 3.3V, module detects it's an X if GPIO is high
-  - Also set in config settings if module can't detect automatically
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/7c565093-3bae-4b18-a76a-cdc466a3cfea)
+
+#### 23/04/2023 - Hardware configuration pins
+The idea to use GPIO pins of the RP2040 to allow the hardware to 'detect' what model it is is added to the design for prototype 1
+
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/a35759b2-12fd-4330-9e7f-8c54f81d3ee8)
+
+#### 28/04/2023 - QR code added to PCB
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/4e3c1ff9-d688-467a-990b-833684b4906d)
+
+#### 02/06/2023 - Prototype 1 PCBs arrived
+Testing showed *a lot* of issues. The main ones discovered were:
+- Power protection diodes soldered in reverse
+- USB-C CC resistors not included
+- 3.3V regulator pinout incorrect so non-working
+A lot of bodging later and still no sign of life from the RP2040
+
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/975e607d-b74b-45a0-bb2a-64489c14d2bc)
+
+Enoki PCBs arrived, and the FPC connector is on backwards so it's impossible to fit the display with the pins in the correct order
+
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/fb9f99c1-0c01-4968-b200-e23ba742d63e)
+
+#### 04/10/2023 - Building blocks idea
+I had the idea to start prototyping using smaller blocks, which really I should've done to begin with, and would've done if not for overconfidence
+
+#### 15/01/2024 - The first building blocks
+KiCad projects for the building blocks begin to come together
+
+#### 31/01/2024 - Building blocks order
+A panelised PCB with the input stage, output stage, and Enoki was ordered from JLC
+
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/9011a8ff-97ef-4ec7-beaa-0a3b44cd65ce)
+
+#### 13/02/2024 - Enoki lives!
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/65c8164e-f000-4cd5-a37c-f7de7897abff)
