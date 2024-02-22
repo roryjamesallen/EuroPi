@@ -45,3 +45,8 @@ A panelised PCB with the input stage, output stage, and Enoki was ordered from J
 
 #### 13/02/2024 - Enoki lives!
 ![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/65c8164e-f000-4cd5-a37c-f7de7897abff)
+
+#### 21/02/2024 - Analogue input testing
+Successful testing and software development of the analogue input building block PCB. Input detection works consistently, and analogue voltage is detected, however a mistake in resistor values means the range is set at 0-3V into the ADC despite the ADC range being 0-2.048V, so negative voltages lower than ~2V cannot be read
+
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/fcf70bad-958e-4776-b045-4cc93729183d)
