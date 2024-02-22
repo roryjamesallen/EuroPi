@@ -55,4 +55,4 @@ Input detection works for all 4 channels, but a yet undetermined issue is causin
 
 ![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/1063a4a7-e716-4d2a-b3b2-b2bd6dc89bfd)
 
-The software wrappers for using the new outputs is beginning to take shape
+The software wrappers for using the new outputs is beginning to take shape. Input detection implementation will need extra components compared to what was initially expected as the jack must have a direct connection to the GPIO to allow hardware interrupts to be used for digital communication. The current proposal is to use a transistor, resistor, and diode per input as per the current EuroPi hardware digital input
