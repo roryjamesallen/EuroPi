@@ -63,3 +63,8 @@ Input detection works for all 4 channels, but a yet undetermined issue is causin
 ![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/1063a4a7-e716-4d2a-b3b2-b2bd6dc89bfd)
 
 The software wrappers for using the new outputs is beginning to take shape. Input detection implementation will need extra components compared to what was initially expected as the jack must have a direct connection to the GPIO to allow hardware interrupts to be used for digital communication. The current proposal is to use a transistor, resistor, and diode per input as per the current EuroPi hardware digital input
+
+#### 22/02/2024 - Analogue input development
+To fix the input range error, digital input stage, and bipolar control, I designed a new circuit which uses an analogue switch (one for all 4 inputs, polarity setting is global) to allow ±5V or 0-10V input, with the entire ADC range used for either. Even though the MCP6004 only clamps the signal to 0-3.3V, the ADC's input limits are to VDD (3.3V as well) and not 2.048V, so the reading will just clip rather than damage the IC
+
+![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/8d14d592-1124-45cf-b7cf-e3d282a928f0)
