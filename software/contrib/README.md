@@ -13,6 +13,12 @@ Two channels of probability-based routing, where the digital input will be route
 <i>Author: [Bridgee](https://github.com/Bridgee)</i>
 <br><i>Labels: Random</i>
 
+### Clock Modifier \[ [documentation](/software/contrib/clock_mod.md) | [script](/software/contrib/clock_mod.md) \]
+A clock multiplier or divider. Each channel has an independently-controllable modifier, multiplying or dividing an external clock signal on `din`.
+
+<i>Author: [chrisib](https://github.com/chrisib)</i>
+<br><i>Labels: clock, clock multiplier, clock divider, gates>/i>
+
 ### Consequencer \[ [documentation](/software/contrib/consequencer.md) | [script](/software/contrib/consequencer.md) \]
 A gate and CV sequencer inspired by Mutable Instruments Grids and the Music Thing Modular Turing Machine
 
@@ -20,6 +26,12 @@ Users can morph between patterns and CV sequences during operation, with 3 gate 
 
 <i>Author: [gamecat69](https://github.com/gamecat69)</i>
 <br><i>Labels: sequencer, gates, triggers, drums, randomness</i>
+
+### Conway \[ [documentation](/software/contrib/conway.md) | [script](/software/contrib/conway.md) \]
+A semi-random LFO that uses [John Conway's Game Of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) to produce CV and gate signals.
+
+<i>Author: [chrisib](https://github.com/chrisib)</i>
+<br><i>Labels: lfo, gates, randomness</i>
 
 ### CVecorder \[ [documentation](/software/contrib/cvecorder.md) | [script](/software/contrib/cvecorder.py) \]
 6 channels of control voltage recording
@@ -171,6 +183,13 @@ Users have the x, y, and z values of the output of each attractor model availabl
 
 <i>Author: [seanbechhofer](https://github.com/seanbechhofer)</i>
 <br><i>Labels: gates, triggers, randomness</i>
+
+### Traffic \[ [documentation](/software/contrib/traffic.md) | [script](/software/contrib/traffic.py) \]
+A re-imagining of [Jasmine and Olive Tree's Traffic](https://jasmineandolivetrees.com/products/traffic) module. Triggers are sent to both inputs
+generating CV signals based on which trigger fired most recently and a pair of gains per channel.
+
+<i>Author: [chrisib](http://github.com/chrisib)</i>
+<br><i>Labels: sequencer, gate, triggers</i>
 
 ### Turing Machine \[ [documentation](/software/contrib/turing_machine.md) | [script](/software/contrib/turing_machine.py) \]
 A script meant to recreate the [Music Thing Modular Turning Machine Random Sequencer](https://musicthing.co.uk/pages/turing.html)

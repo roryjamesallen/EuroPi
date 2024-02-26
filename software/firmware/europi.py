@@ -1,5 +1,5 @@
 """
-Rory Allen 19/11/2021 Apache License Version 2.0
+Rory Allen 2024 Apache License Version 2.0
 
 Before using any of this library, follow the instructions in
 `programming_instructions.md <https://github.com/Allen-Synthesis/EuroPi/blob/main/software/programming_instructions.md>`_
@@ -13,7 +13,6 @@ For example::
 
 Will set the CV output 3 to a voltage of 4.5V.
 """
-
 
 import ssd1306
 import sys
@@ -32,7 +31,7 @@ from version import __version__
 
 from framebuf import FrameBuffer, MONO_HLSB
 from europi_config import load_europi_config
-from experimental_config import load_experimental_config
+from experimental.experimental_config import load_experimental_config
 
 if sys.implementation.name == "micropython":
     TEST_ENV = False  # We're in micropython, so we can assume access to real hardware
@@ -66,7 +65,9 @@ experimental_config = load_experimental_config()
 # OLED component display dimensions.
 OLED_WIDTH = europi_config["display_width"]
 OLED_HEIGHT = europi_config["display_height"]
-I2C_CHANNEL = 0
+I2C_SDA = europi_config["display_sda"]
+I2C_SCL = europi_config["display_scl"]
+I2C_CHANNEL = europi_config["display_channel"]
 I2C_FREQUENCY = 400000
 
 # Standard max int consts.
@@ -500,8 +501,8 @@ class Display(SSD1306_I2C):
 
     def __init__(
         self,
-        sda,
-        scl,
+        sda=I2C_SDA,
+        scl=I2C_SCL,
         width=OLED_WIDTH,
         height=OLED_HEIGHT,
         channel=I2C_CHANNEL,
@@ -530,25 +531,34 @@ class Display(SSD1306_I2C):
             rotate = 0
         else:
             rotate = 1
-        self.write_cmd(ssd1306.SET_COM_OUT_DIR | ((rotate & 1) << 3))
-        self.write_cmd(ssd1306.SET_SEG_REMAP | (rotate & 1))
+        if not TEST_ENV:
+            self.write_cmd(ssd1306.SET_COM_OUT_DIR | ((rotate & 1) << 3))
+            self.write_cmd(ssd1306.SET_SEG_REMAP | (rotate & 1))
 
-    def centre_text(self, text):
-        """Split the provided text across 3 lines of display."""
-        self.fill(0)
+    def centre_text(self, text, clear_first=True, auto_show=True):
+        """Display one or more lines of text centred both horizontally and vertically.
+
+        @param text  The text to display
+        @param clear_first  If true, the screen buffer is cleared before rendering the text
+        @param auto_show  If true, oled.show() is called after rendering the text. If false, you must call oled.show() yourself
+        """
+        if clear_first:
+            self.fill(0)
         # Default font is 8x8 pixel monospaced font which can be split to a
-        # maximum of 4 lines on a 128x32 display, but we limit it to 3 lines
-        # for readability.
+        # maximum of 4 lines on a 128x32 display, but the maximum_lines variable
+        # is rounded down for readability
         lines = str(text).split("\n")
         maximum_lines = round(self.height / CHAR_HEIGHT)
         if len(lines) > maximum_lines:
             raise Exception("Provided text exceeds available space on oled display.")
-        padding_top = (self.height - (len(lines) * 9)) / 2
+        padding_top = (self.height - (len(lines) * (CHAR_HEIGHT + 1))) / 2
         for index, content in enumerate(lines):
-            x_offset = int((self.width - ((len(content) + 1) * 7)) / 2) - 1
-            y_offset = int((index * 9) + padding_top) - 1
+            x_offset = int((self.width - ((len(content) + 1) * (CHAR_WIDTH - 1))) / 2) - 1
+            y_offset = int((index * (CHAR_HEIGHT + 1)) + padding_top) - 1
             self.text(content, x_offset, y_offset)
-        self.show()
+
+        if auto_show:
+            self.show()
 
 
 class Output:
@@ -568,6 +578,7 @@ class Output:
         self._duty = 0
         self.MIN_VOLTAGE = min_voltage
         self.MAX_VOLTAGE = max_voltage
+        self.gate_voltage = clamp(europi_config["gate_voltage"], self.MIN_VOLTAGE, self.MAX_VOLTAGE)
 
         self._gradients = []
         for index, value in enumerate(OUTPUT_CALIBRATION_VALUES[:-1]):
@@ -589,7 +600,7 @@ class Output:
 
     def on(self):
         """Set the voltage HIGH at 5 volts."""
-        self.voltage(5)
+        self.voltage(self.gate_voltage)
 
     def off(self):
         """Set the voltage LOW at 0 volts."""
@@ -618,7 +629,7 @@ k2 = Knob(PIN_K2)
 b1 = Button(PIN_B1)
 b2 = Button(PIN_B2)
 
-oled = Display(0, 1)
+oled = Display()
 cv1 = Output(PIN_CV1)
 cv2 = Output(PIN_CV2)
 cv3 = Output(PIN_CV3)
