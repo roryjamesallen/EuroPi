@@ -68,3 +68,6 @@ The software wrappers for using the new outputs is beginning to take shape. Inpu
 To fix the input range error, digital input stage, and bipolar control, I designed a new circuit which uses an analogue switch (one for all 4 inputs, polarity setting is global) to allow ±5V or 0-10V input, with the entire ADC range used for either. Even though the MCP6004 only clamps the signal to 0-3.3V, the ADC's input limits are to VDD (3.3V as well) and not 2.048V, so the reading will just clip rather than damage the IC
 
 ![image](https://github.com/roryjamesallen/EuroPi/assets/79809962/8d14d592-1124-45cf-b7cf-e3d282a928f0)
+
+#### 27/08/2024 - RP2350
+The release announcement of the RP2350 has revived this project slightly; the RP2350B has 8 ADCs, and according to forum posts the non-linearity they experienced in the RP2040 has been fixed, so a large hardware cost and software complexity issue has been solved in one swoop. I have ordered a [Pimoroni PGA2350](https://shop.pimoroni.com/products/pga2350?variant=42092629229651) to experiment with.
