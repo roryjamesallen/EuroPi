@@ -62,20 +62,6 @@ except ImportError:
 europi_config = load_europi_config()
 experimental_config = load_experimental_config()
 
-# EuroPi hardware type
-HARDWARE_NAMES = {
-    0: "EuroPi",
-    1: "EuroPi X"
-    }
-HARDWARE_IDENTIFICATION_PINS = [6,7,8,9]
-HARDWARE_TYPE = 0
-for bit_pin_number, bit_multiplier in zip(HARDWARE_IDENTIFICATION_PINS, [1,2,4,8]):
-    bit_pin_object = Pin(bit_pin_number, Pin.IN, Pin.PULL_DOWN)
-    HARDWARE_TYPE += bit_pin_object.value() * bit_multiplier
-if HARDWARE_TYPE in HARDWARE_NAMES:
-    HARDWARE_NAME = HARDWARE_NAMES[HARDWARE_TYPE]
-else:
-    HARDWARE_NAME = "Undefined"
 
 # OLED component display dimensions.
 OLED_WIDTH = europi_config.DISPLAY_WIDTH
