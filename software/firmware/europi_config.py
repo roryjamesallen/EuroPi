@@ -26,7 +26,7 @@ class EuroPiConfig:
             # EuroPi revision -- this is currently unused, but reserved for future expansion
             configuration.choice(
                 name="EUROPI_MODEL",
-                choices = ["europi, europi-x"],
+                choices = ["europi", "europi-x"],
                 default="europi"
             ),
 
