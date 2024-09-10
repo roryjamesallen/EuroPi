@@ -26,7 +26,7 @@ class EuroPiConfig:
             # EuroPi revision -- this is currently unused, but reserved for future expansion
             configuration.choice(
                 name="EUROPI_MODEL",
-                choices = ["europi"],
+                choices = ["europi, europi-x"],
                 default="europi"
             ),
 
@@ -49,14 +49,12 @@ class EuroPiConfig:
             ),
             configuration.integer(
                 name="DISPLAY_WIDTH",
-                minimum=8,
-                maximum=1024,
+                range=range(8, 1024),
                 default=128
             ),
             configuration.integer(
                 name="DISPLAY_HEIGHT",
-                minimum=8,
-                maximum=1024,
+                range=range(8, 1024),
                 default=32
             ),
             configuration.choice(
@@ -71,29 +69,25 @@ class EuroPiConfig:
             ),
             configuration.integer(
                 name="DISPLAY_CHANNEL",
-                minimum=0,
-                maximum=1,
+                range=range(0, 2),
                 default=0
             ),
 
             # I/O voltage settings
-            configuration.floatingPoint(
+            configuration.integer(
                 name="MAX_OUTPUT_VOLTAGE",
-                minimum=1.0,
-                maximum=10.0,
-                default=10.0
+                range=range(1, 11),
+                default=10
             ),
-            configuration.floatingPoint(
+            configuration.integer(
                 name="MAX_INPUT_VOLTAGE",
-                minimum=1.0,
-                maximum=12.0,
-                default=12.0
+                range=range(1, 13),
+                default=12
             ),
-            configuration.floatingPoint(
+            configuration.integer(
                 name="GATE_VOLTAGE",
-                minimum=1.0,
-                maximum=10.0,
-                default=5.0
+                range=range(1, 11),
+                default=5
             ),
 
             # Menu settings
@@ -107,3 +101,4 @@ class EuroPiConfig:
 
 def load_europi_config():
     return ConfigFile.load_config(EuroPiConfig, ConfigSpec(EuroPiConfig.config_points()))
+
