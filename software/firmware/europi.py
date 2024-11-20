@@ -152,6 +152,26 @@ def bootsplash():
 # Component classes.
 
 
+class MCP3428:
+    """yadaadadayayyaaddaaaa"""
+    
+    def __init__(self, sda=0, scl=1, channel=0):
+        self.adc = "MCP3428(Pin(sda), Pin(scl), channel)"	#Replace with actual MCP3428 library initialisation
+        
+    def read_input(self, channel):
+        "self.adc.read(channel)"
+        
+class AnalogueInputMC3428:
+    "habsybaysbdkajnsifcn"
+    
+    def __init__(self, adc, channel):
+        self.adc = adc
+        self.channel = channel
+        
+    def read_voltage(self):	#This would contain the calibration compensation as this will need to be per channel to be accurate
+        self.adc.read_input(self.channel)
+
+
 class AnalogueReader:
     """A base class for common analogue read methods.
 
