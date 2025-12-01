@@ -10415,7 +10415,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+		(property "Footprint" "allen-synthesis:jack-thonkiconn-mono"
 			(at 375.92 93.98 0)
 			(effects
 				(font
@@ -11229,7 +11229,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
+		(property "Footprint" "allen-synthesis:led-3mm"
 			(at 167.64 58.42 0)
 			(effects
 				(font
@@ -11364,7 +11364,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
+		(property "Footprint" "allen-synthesis:led-3mm"
 			(at 261.62 58.42 0)
 			(effects
 				(font
@@ -11499,7 +11499,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
+		(property "Footprint" "allen-synthesis:led-3mm"
 			(at 356.87 58.42 0)
 			(effects
 				(font
@@ -11634,7 +11634,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
+		(property "Footprint" "allen-synthesis:led-3mm"
 			(at 167.64 114.3 0)
 			(effects
 				(font
@@ -11769,7 +11769,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
+		(property "Footprint" "allen-synthesis:led-3mm"
 			(at 261.62 114.3 0)
 			(effects
 				(font
@@ -11904,7 +11904,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
+		(property "Footprint" "allen-synthesis:led-3mm"
 			(at 356.87 114.3 0)
 			(effects
 				(font
@@ -12286,7 +12286,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+		(property "Footprint" "allen-synthesis:jack-thonkiconn-mono"
 			(at 334.01 175.26 0)
 			(effects
 				(font
@@ -12425,7 +12425,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+		(property "Footprint" "allen-synthesis:jack-thonkiconn-mono"
 			(at 375.92 38.1 0)
 			(effects
 				(font
@@ -12562,7 +12562,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+		(property "Footprint" "allen-synthesis:jack-thonkiconn-mono"
 			(at 280.67 38.1 0)
 			(effects
 				(font
@@ -12699,7 +12699,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+		(property "Footprint" "allen-synthesis:jack-thonkiconn-mono"
 			(at 186.69 38.1 0)
 			(effects
 				(font
@@ -12836,7 +12836,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+		(property "Footprint" "allen-synthesis:jack-thonkiconn-mono"
 			(at 186.69 93.98 0)
 			(effects
 				(font
@@ -12973,7 +12973,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+		(property "Footprint" "allen-synthesis:jack-thonkiconn-mono"
 			(at 280.67 93.98 0)
 			(effects
 				(font
@@ -13455,7 +13455,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical"
+		(property "Footprint" "allen-synthesis:power-header-10-pin"
 			(at 35.56 41.91 0)
 			(effects
 				(font
@@ -13612,7 +13612,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles"
+		(property "Footprint" "allen-synthesis:jack-thonkiconn-mono"
 			(at 199.39 173.99 0)
 			(effects
 				(font
@@ -15489,7 +15489,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "allen-synthesis:switch-momentary-c&k"
 			(at 110.49 163.83 0)
 			(effects
 				(font
@@ -15625,7 +15625,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "allen-synthesis:switch-momentary-c&k"
 			(at 110.49 186.69 0)
 			(effects
 				(font
@@ -16137,7 +16137,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical"
+		(property "Footprint" "allen-synthesis:potentiometer-9mm"
 			(at 336.55 223.52 0)
 			(effects
 				(font
@@ -16208,7 +16208,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical"
+		(property "Footprint" "allen-synthesis:potentiometer-9mm"
 			(at 365.76 223.52 0)
 			(effects
 				(font
