@@ -1,0 +1,32 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+"C1, C2",0805,2,10uF,
+"C10, C11, C12, C13, C14, C16, C17, C18, C4, C5, C6, C7, C9",0603,13,100nF,
+C15,0603,1,1nF,
+C3,0603,1,1uF,
+"D1, D2, D5",D_SMA,3,D,C5356810
+D3,D_SMA,1,D,
+J1,power-header-10-pin-unlabelled,1,Conn_02x05_Odd_Even,
+J10,jack-thonkiconn-mono,1,Output 6 Jack,
+"J11, J2",PinHeader_1x04_P2.54mm_Vertical,2,Conn_01x04_Pin,
+J3,jack-thonkiconn-mono,1,Output 1 Jack,
+J4,jack-thonkiconn-mono,1,Output 4 Jack,
+J5,jack-thonkiconn-mono,1,Analogue Input Jack,
+J6,jack-thonkiconn-mono,1,Output 2 Jack,
+J7,jack-thonkiconn-mono,1,Output 5 Jack,
+J8,jack-thonkiconn-mono,1,Digital Input Jack,
+J9,jack-thonkiconn-mono,1,Output 3 Jack,
+"LED1, LED2, LED3, LED4, LED5, LED6",led-3mm,6,LED,
+Q1,SOT-89-3,1,2N2222,C21714170
+"R1, R13, R14, R16, R17, R2, R26, R27, R29, R3, R30, R38, R39, R4",0603,14,1K,
+"R10, R21, R22, R33, R34, R9",0603,6,220K,
+"R11, R12, R24, R25, R36, R37",0603,6,4K7,
+"R15, R19, R20, R31, R32, R35, R7, R8",0603,8,100K,
+"R18, R23, R28",0603,3,22K,
+"R40, R5, R6",0603,3,10K,
+"SW1, SW2",switch-momentary-c&k,2,SW_Push,
+U2,raspberry-pi-pico,1,PICO_RP2040,
+"U3, U4",SOIC-14_3.9x8.7mm_P1.27mm,2,TL074,C6963
+U5,SOIC-8_3.9x4.9mm_P1.27mm,1,MCP6002-xSN,C7377
+U6,TO-252-2,1,L7805,C7394043
+VR1,potentiometer-9mm,1,KNOB 1,
+VR2,potentiometer-9mm,1,KNOB 2,
