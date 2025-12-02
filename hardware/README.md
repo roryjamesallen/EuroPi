@@ -1,4 +1,14 @@
+# Hardware Overview
+There are multiple versions of the hardware documented in this directory, the original EuroPi (through-hole), the new EuroPi-SMD (surface-mount), and a stripboard version (stripboard). Each has a different build guide and bill of materials, so make sure you follow the one you want to build.
+
+The surface-mount version is the simplest to DIY as you only need to solder on the components which stick through the panel, i.e. the jacks, knobs etc. All of the other circuitry is soldered onto the PCB already.
+
+The through-hole version is slightly more in depth as you need to solder on every component, however only through-hole components are used, so this isn't as hard as it sounds. This is the build most people have made and was previously the only publicly available build at all.
+
+The stripboard version is a much rougher layout and does not use a PCB at all, but instead uses 'stripboard'. This hasn't been tested nearly as much as the other two, but people have successfully built it and shared their version on Discord.
+
 # Hardware Specifications
+All hardware variants share the same specifications as the components and schematics are the same.
 
 ## Outputs
 - 1k Output Impedance
