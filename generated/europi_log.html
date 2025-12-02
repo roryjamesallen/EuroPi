@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ui &mdash; EuroPi  documentation</title>
+  <title>europi_log &mdash; EuroPi  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="experimental" href="experimental.html" />
-    <link rel="prev" title="file_utils" href="file_utils.html" /> 
+    <link rel="next" title="europi_script" href="europi_script.html" />
+    <link rel="prev" title="europi_hardware" href="europi_hardware.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,11 +46,11 @@
 <li class="toctree-l2"><a class="reference internal" href="europi_config.html">europi_config</a></li>
 <li class="toctree-l2"><a class="reference internal" href="europi_display.html">europi_display</a></li>
 <li class="toctree-l2"><a class="reference internal" href="europi_hardware.html">europi_hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="europi_log.html">europi_log</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">europi_log</a></li>
 <li class="toctree-l2"><a class="reference internal" href="europi_script.html">europi_script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_utils.html">file_utils</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">ui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental.html">experimental</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental.a_to_d.html">experimental.a_to_d</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental.bisect.html">experimental.bisect</a></li>
@@ -98,9 +98,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../api.html">API</a> &raquo;</li>
-      <li>ui</li>
+      <li>europi_log</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/generated/ui.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/generated/europi_log.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -108,36 +108,96 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-ui">
-<span id="ui"></span><h1>ui<a class="headerlink" href="#module-ui" title="Permalink to this heading"></a></h1>
-<p>This module provides reusable UI components.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="ui.Menu">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ui.</span></span><span class="sig-name descname"><span class="pre">Menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_knob=&lt;europi_hardware.Knob</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">choice_buttons=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ui.Menu" title="Permalink to this definition"></a></dt>
-<dd><p>A class representing a menu displayable on the EuroPi screen. The user can select a menu item using the
-configured knob and select it with the configured button(s).</p>
+  <section id="module-europi_log">
+<span id="europi-log"></span><h1>europi_log<a class="headerlink" href="#module-europi_log" title="Permalink to this heading"></a></h1>
+<p>Assorted functions to make text-based logging easier</p>
+<p>We define 4 levels of log:
+- info – general status information, high-level execution flow
+- warning – warnings that something’s unusual, but not necessarily broken
+- error – a critical error that means our module has stopped working
+- debug – developer-oriented debugging information</p>
+<p>Each log item has a level and a tag associated with it. The tag should be
+unique to each module to make tracing the source of warnings easier</p>
+<p>Log messages are written to the console and saved to /europi_log.txt. Importing
+the <code class="docutils literal notranslate"><span class="pre">europi</span></code> module will reset the log file.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="europi_log.init_log">
+<span class="sig-prename descclassname"><span class="pre">europi_log.</span></span><span class="sig-name descname"><span class="pre">init_log</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#europi_log.init_log" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the log file.</p>
+<p>This is done automatically by europi.py when it is imported</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="europi_log.log_debug">
+<span class="sig-prename descclassname"><span class="pre">europi_log.</span></span><span class="sig-name descname"><span class="pre">log_debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#europi_log.log_debug" title="Permalink to this definition"></a></dt>
+<dd><p>Log a debugging message.</p>
+<p>Debug messages are for developers and can contain very low-level, code-related
+information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>items</strong> – a list of the menu items</p></li>
-<li><p><strong>select_func</strong> – the function to call when a menu item is chosen. The function will be called with single argument, the selected item.</p></li>
-<li><p><strong>select_knob</strong> – the knob used to select the menu item, defaults to k1</p></li>
-<li><p><strong>choice_buttons</strong> – a List of Buttons that can be pressed to choose the selected item. Defaults to b1</p></li>
+<li><p><strong>message</strong> – The message to log</p></li>
+<li><p><strong>tag</strong> – An optional tag to use as a prefix (e.g. the module name)</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="ui.Menu.draw_menu">
-<span class="sig-name descname"><span class="pre">draw_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ui.Menu.draw_menu" title="Permalink to this definition"></a></dt>
-<dd><p>This function should be called by your script’s main loop in order to display and refresh the menu.</p>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="ui.Menu.selected">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">selected</span></span><a class="headerlink" href="#ui.Menu.selected" title="Permalink to this definition"></a></dt>
-<dd><p>The currently selected menu item.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="europi_log.log_error">
+<span class="sig-prename descclassname"><span class="pre">europi_log.</span></span><span class="sig-name descname"><span class="pre">log_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#europi_log.log_error" title="Permalink to this definition"></a></dt>
+<dd><p>Log an error message.</p>
+<p>Errors are critical and may indicate a crash, missing hardware, or other
+unrecoverable errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> – The message to log</p></li>
+<li><p><strong>tag</strong> – An optional tag to use as a prefix (e.g. the module name)</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="europi_log.log_info">
+<span class="sig-prename descclassname"><span class="pre">europi_log.</span></span><span class="sig-name descname"><span class="pre">log_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#europi_log.log_info" title="Permalink to this definition"></a></dt>
+<dd><p>Log a simple information message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> – The message to log</p></li>
+<li><p><strong>tag</strong> – An optional tag to use as a prefix (e.g. the module name)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="europi_log.log_warning">
+<span class="sig-prename descclassname"><span class="pre">europi_log.</span></span><span class="sig-name descname"><span class="pre">log_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#europi_log.log_warning" title="Permalink to this definition"></a></dt>
+<dd><p>Log a warning message.</p>
+<p>Warnings indicate an abnormal state, but are recoverable or can be worked-around.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> – The message to log</p></li>
+<li><p><strong>tag</strong> – An optional tag to use as a prefix (e.g. the module name)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="europi_log.write_log_entry">
+<span class="sig-prename descclassname"><span class="pre">europi_log.</span></span><span class="sig-name descname"><span class="pre">write_log_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_entry</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#europi_log.write_log_entry" title="Permalink to this definition"></a></dt>
+<dd><p>Write line to the log.</p>
+<p>When logged, the message is written to the console and saved to /europi_log.txt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>log_entry</strong> – The line of text to write to the log</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -146,8 +206,8 @@ configured knob and select it with the configured button(s).</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="file_utils.html" class="btn btn-neutral float-left" title="file_utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="experimental.html" class="btn btn-neutral float-right" title="experimental" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="europi_hardware.html" class="btn btn-neutral float-left" title="europi_hardware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="europi_script.html" class="btn btn-neutral float-right" title="europi_script" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
